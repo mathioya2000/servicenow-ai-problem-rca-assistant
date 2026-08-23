@@ -1,8 +1,8 @@
-\# ServiceNow AI Problem RCA Assistant
+# ServiceNow AI Problem RCA Assistant
 
 
 
-\## Overview
+## Overview
 
 AI-powered ServiceNow Problem Management assistant that analyzes Problem records and generates root cause analysis recommendations.
 
@@ -12,21 +12,20 @@ This project integrates:
 
 
 
-\- ServiceNow Problem Management
+- ServiceNow Problem Management
 
-\- FastAPI backend
+- FastAPI backend
 
-\- OpenAI API
+- OpenAI API
 
-\- Render cloud deployment
+- Render cloud deployment
 
-\- ServiceNow UI Action
+- ServiceNow UI Action
 
-\- GlideAjax Script Include
+- GlideAjax Script Include
 
 
-
-\## Business Use Case
+## Business Use Case
 
 Problem Management teams often spend significant time investigating recurring issues.
 
@@ -36,19 +35,19 @@ This assistant accelerates RCA by providing:
 
 
 
-\- probable root cause analysis
+- probable root cause analysis
 
-\- evidence recommendations
+- evidence recommendations
 
-\- workaround suggestions
+- workaround suggestions
 
-\- permanent fix recommendations
+- permanent fix recommendations
 
-\- known error recommendations
+- known error recommendations
 
-\- business impact analysis
+- business impact analysis
 
-\- executive summaries
+- executive summaries
 
 
 
@@ -58,11 +57,10 @@ Repeated EMR login failures → AI identifies authentication timeout issues, imp
 
 
 
-\---
+---
 
 
-
-\## Architecture
+## Architecture
 
 
 
@@ -94,17 +92,17 @@ ServiceNow Work Notes
 
 
 
-\---
+---
 
 
 
-\## API Endpoints
+## API Endpoints
 
 
 
-\### Health Check
+### Health Check
 
-GET /
+`GET /`
 
 
 
@@ -115,32 +113,15 @@ Returns:
 ```json
 
 {
-
-&#x20; "message": "ServiceNow AI Problem RCA Assistant is running"
-
+  "message": "ServiceNow AI Problem RCA Assistant is running"
 }
-
 ```
 
 
 
-\### Problem Retrieval
+### Problem Retrieval
 
-GET /problem/{problem\_number}
-
-
-
-Example:
-
-
-
-/problem/PRB0000001
-
-
-
-\### AI RCA Analysis
-
-GET /ai-problem/{problem\_number}
+`GET /problem/{problem_number}`
 
 
 
@@ -148,7 +129,21 @@ Example:
 
 
 
-/ai-problem/PRB0000001
+`/problem/PRB0000001`
+
+
+
+### AI RCA Analysis
+
+`GET /ai-problem/{problem_number}`
+
+
+
+Example:
+
+
+
+`/ai-problem/PRB0000001`
 
 
 
@@ -156,57 +151,57 @@ Returns:
 
 
 
-\- root cause
+- root cause
 
-\- workaround
+- workaround
 
-\- permanent fix
+- permanent fix
 
-\- known error guidance
+- known error guidance
 
-\- affected services
+- affected services
 
-\- business impact
-
-
-
-\---
+- business impact
 
 
 
-\## Tech Stack
+---
 
 
 
-\- Python
-
-\- FastAPI
-
-\- OpenAI API
-
-\- ServiceNow
-
-\- GlideAjax
-
-\- RESTMessageV2
-
-\- Render
-
-\- GitHub
+## Tech Stack
 
 
 
-\---
+- Python
+
+- FastAPI
+
+- OpenAI API
+
+- ServiceNow
+
+- GlideAjax
+
+- RESTMessageV2
+
+- Render
+
+- GitHub
 
 
 
-\## ServiceNow Components
+---
 
 
 
-\### UI Action
+## ServiceNow Components
 
-Problem \[problem]
+
+
+### UI Action
+
+Problem [problem]
 
 
 
@@ -218,23 +213,23 @@ Analyze Problem RCA
 
 
 
-\### Script Include
+### Script Include
 
 AIProblemRCAAssistantAjax
 
 
 
-\### Output
+### Output
 
 Writes structured AI RCA analysis into Problem Work Notes.
 
 
 
-\---
+---
 
 
 
-\## Deployment
+## Deployment
 
 
 
@@ -245,22 +240,24 @@ Hosted on Render.
 Environment variables:
 
 
+```
+OPENAI_API_KEY
 
-OPENAI\_API\_KEY
+SERVICENOW_INSTANCE_URL
 
-SERVICENOW\_INSTANCE\_URL
+SERVICENOW_USERNAME
 
-SERVICENOW\_USERNAME
+SERVICENOW_PASSWORD
+```
 
-SERVICENOW\_PASSWORD
+ Security: Store credentials as environment variables. Never commit API keys, passwords, or the `.env` file.
+ Use a dedicated ServiceNow integration account with only the required permissions.
+
+---
 
 
 
-\---
-
-
-
-\## Portfolio Value
+## Portfolio Value
 
 
 
@@ -268,29 +265,29 @@ Demonstrates:
 
 
 
-\- ServiceNow development
+- ServiceNow development
 
-\- AI integration
+- AI integration
 
-\- enterprise workflow automation
+- enterprise workflow automation
 
-\- ITSM Problem Management
+- ITSM Problem Management
 
-\- REST API integration
+- REST API integration
 
-\- cloud deployment
+- cloud deployment
 
-\- business process intelligence
-
-
-
-\---
+- business process intelligence
 
 
 
-\## Author
+---
 
 
 
-Joseph Mwangi
+## Author
 
+
+Joseph Mwangi  
+ServiceNow Certified Application Developer (CAD)  
+[GitHub Profile](https://github.com/mathioya2000) | [Portfolio](https://mathioya2000.github.io)
